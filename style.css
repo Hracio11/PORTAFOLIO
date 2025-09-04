@@ -375,6 +375,65 @@ body {
     font-size: 0.9em;
 }
 
+/* Sección de Portafolio */
+.portfolio-section {
+    background-color: #1a1a1a;
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.portfolio-section h2 {
+    font-size: 2.5em;
+    font-weight: normal;
+    margin-bottom: 50px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Crea una cuadrícula adaptable */
+    gap: 30px; /* Espacio entre los elementos */
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-overlay h3 {
+    margin: 0 0 10px 0;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1; /* Se muestra al pasar el cursor */
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Efecto de zoom en la imagen */
+}
 
 
 /* ====== Animación ====== */

@@ -471,52 +471,128 @@ body {
   transform: translateY(0);
 }
 
+/* ====== Media Queries para Responsive Design ====== */
 
-/* ====== Responsive ====== */
-@media (max-width: 768px) {
-  .hero-section {
-    padding: 20px;
+/* --- Tablets y pantallas medianas (de 768px a 1024px) --- */
+@media (max-width: 1024px) {
+  .hero-section, .hero-section2 {
+    padding: 20px 30px; /* Reduce el padding para pantallas más pequeñas */
+  }
+
+  .nav-links {
+    gap: 20px; /* Reduce el espacio entre los enlaces */
+  }
+
+  .hero-content {
+    margin-left: 30px; /* Ajusta el margen izquierdo */
+    padding-bottom: 30px;
+  }
+  
+  .hero-content h1 {
+    font-size: clamp(2rem, 5vw, 4rem); /* Ajusta el tamaño de la fuente para el título */
+  }
+  
+  .hero-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-section {
+    flex-direction: column; /* Apila el contenido y la imagen */
+    text-align: center;
+    padding: 80px 30px;
+    gap: 40px;
+  }
+
+  .about-content {
+    max-width: 100%; /* El contenido ocupa el ancho completo */
+  }
+
+  .about-content h2, .about-content .email, .about-content .description {
     text-align: center;
   }
 
-  .navbar {
+  .about-image {
+    width: 280px;
+    height: 280px;
+  }
+
+  .resume-section {
+    flex-direction: column; /* Apila las columnas de currículum */
+    padding: 60px 30px;
+  }
+  
+  .resume-column {
+    padding: 0;
+  }
+
+  .portfolio-section {
+    padding: 60px 20px;
+  }
+}
+
+/* --- Smartphones y pantallas pequeñas (hasta 767px) --- */
+@media (max-width: 767px) {
+  /* Oculta la navegación y usa un menú de hamburguesa (si se implementa en JS) */
+  .nav-links {
+    display: none;
     flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 200px;
+    border-radius: 8px;
+    padding: 20px;
     gap: 15px;
+    text-align: center;
+  }
+
+  .hero-section, .hero-section2 {
+    padding: 20px; /* Reduce el padding general */
   }
 
   .hero-content {
     margin-left: 0;
-    align-self: center;
-    padding-bottom: 30px;
+    text-align: center;
+    align-self: center; /* Centra el contenido en el eje transversal */
   }
-
+  
+  .hero-content h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    letter-spacing: 1px;
+  }
+  
+  .hero-content h3 {
+    font-size: 1rem;
+  }
+  
   .hero-buttons {
-    justify-content: center;
+    justify-content: center; /* Centra los botones en pantallas pequeñas */
   }
 
   .social-icons {
-    justify-content: center;
-  }
-}
-@media (max-width: 900px) {
-  .about-section {
-    flex-direction: column;
-    text-align: center;
+    justify-content: center; /* Centra los íconos de redes sociales */
   }
 
-  .about-content {
-    max-width: 100%;
+  .about-section {
+    padding: 60px 20px;
+    gap: 30px;
   }
 
   .about-image {
     width: 250px;
     height: 250px;
   }
-}
+  
+  .resume-section {
+    padding: 40px 20px;
+  }
 
-.portfolio-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  color: #fff; /* Verde aesthetic */
-  letter-spacing: 2px;
+  .portfolio-section {
+    padding: 40px 10px;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Una sola columna para móviles */
+  }
 }
